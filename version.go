@@ -10,12 +10,13 @@ var (
 	BUILD_TIME  string
 	COMMIT_HASH string
 	COMMIT_TIME string
+	APP_NAME    string
 )
 
 func GetVersion() string {
 	if VERSION != "" {
 		return fmt.Sprintf(
-			"\n\tfree5GC version: %s"+
+			"\n\tAPPNAME version: %s"+
 				"\n\tbuild time:      %s"+
 				"\n\tcommit hash:     %s"+
 				"\n\tcommit time:     %s"+

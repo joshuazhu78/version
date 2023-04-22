@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/free5gc/version"
+	"github.com/joshuazhu78/version"
 )
 
 func TestVersion(t *testing.T) {
@@ -29,7 +29,7 @@ func TestVersion(t *testing.T) {
 		version.COMMIT_TIME = "2020-09-11T07:00:29Z"
 
 		var expected = fmt.Sprintf(
-			"\n\tfree5GC version: %s"+
+			"\n\tAPPNAME version: %s"+
 				"\n\tbuild time:      %s"+
 				"\n\tcommit hash:     %s"+
 				"\n\tcommit time:     %s"+
@@ -48,7 +48,7 @@ func TestVersion(t *testing.T) {
 
 	t.Run("VERSION capture by system", func(t *testing.T) {
 		var stdout []byte
-		version.VERSION = "Release-v3.100.200" // VERSION using free5gc's version (git tag), we static set it here
+		version.VERSION = "Release-v3.100.200" // VERSION using joshuazhu78's version (git tag), we static set it here
 		stdout, _ = exec.Command("bash", "-c", "date -u +\"%Y-%m-%dT%H:%M:%SZ\"").Output()
 		version.BUILD_TIME = strings.TrimSuffix(string(stdout), "\n")
 		stdout, _ = exec.Command("bash", "-c", "git log --pretty=\"%H\" -1 | cut -c1-8").Output()
@@ -58,7 +58,7 @@ func TestVersion(t *testing.T) {
 		version.COMMIT_TIME = strings.TrimSuffix(string(stdout), "\n")
 
 		var expected = fmt.Sprintf(
-			"\n\tfree5GC version: %s"+
+			"\n\tAPPNAME version: %s"+
 				"\n\tbuild time:      %s"+
 				"\n\tcommit hash:     %s"+
 				"\n\tcommit time:     %s"+

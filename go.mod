@@ -1,4 +1,4 @@
-module github.com/free5gc/version
+module github.com/joshuazhu78/version
 
 go 1.14
 
